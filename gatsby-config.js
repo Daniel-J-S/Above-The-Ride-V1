@@ -4,8 +4,8 @@ const { spaceId, accessToken, snipcart, websiteId } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `Wilson Biker Gear`,
-    description: `We've been in the business for over 40 years selling motorcycle rider's apparel, accessories and providing sewing services`,
+    title: `Above The Ride`,
+    description: `Above the Ride brings life to your lifestyle.`,
     author: `DanielJS`,
   },
   plugins: [
@@ -47,8 +47,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Wilson Bike Supply`,
-        short_name: `Wilson Bike Supply`,
+        name: `Above the Ride`,
+        short_name: `Above the Ride`,
         start_url: `/`,
         background_color: `#000000`,
         theme_color: `#000000`,

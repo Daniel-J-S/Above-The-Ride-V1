@@ -94,7 +94,7 @@ export default IndexPage;
 
 export const query = graphql`
   query LadiesQuery {
-    allContentfulClothing (filter: {category: {name: {eq: "Ladies"}}}) {
+    allContentfulClothing (filter: {category: {name: {eq: "Mens"}}}) {
       edges{
         node{
           id

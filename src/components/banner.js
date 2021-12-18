@@ -20,6 +20,9 @@ export default function Banner ({ BannerData }) {
       slidesToScroll: 1
     };
 
+    /*
+
+    TODO: consider using this later
 
     const messages = {
       0: 'Holiday Closure: Dec 25th, 26th & 27th',
@@ -32,7 +35,7 @@ export default function Banner ({ BannerData }) {
     
     useEffect(() => {
       messageRef.current = handleTick;
-    })
+    });
     
     useEffect(() => {
       const timerId = setInterval(() => {
@@ -43,15 +46,18 @@ export default function Banner ({ BannerData }) {
       }
     }, []);
 
+    <div className="scroll-container">
+      <p className="scroll-text" key={message}>
+        <small>
+          {messages[message]}
+        </small>
+      </p>
+    </div>
+
+    */
+
     return (
       <div className="slider-section">
-        <div className="scroll-container">
-          <p className="scroll-text" key={message}>
-            <small>
-              {messages[message]}
-            </small>
-          </p>
-        </div>
         <Slider {...settings}>
           {BannerData.map((items, i) => (
             <div key={i} className="item">

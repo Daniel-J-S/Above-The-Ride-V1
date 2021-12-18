@@ -47,75 +47,10 @@ function IndexPost ({ data, linkData }) {
       </React.Fragment>
     );
 }
-function AccessoryPost ({ data, linkData }) {
-    
-    const reformattedData = [
-      {
-        id: 1,
-        name: 'White and Green w/ 14 Ball',
-        image: data[0].node.productMorePhotos[3],
-        rating: data[0].node.rating,
-        price: 32.99,
-        excerpt: data[0].node.description.childMarkdownRemark.excerpt,
-        slug: data[0].node.slug
-      },
-      {
-        id: 2,
-        name: 'Black and Red w/ 8 Ball',
-        image: data[0].node.productMorePhotos[4],
-        rating: data[0].node.rating,
-        price: 32.99,
-        excerpt: data[0].node.description.childMarkdownRemark.excerpt,
-        slug: data[0].node.slug
-      },
-      {
-        id: 3,
-        name: 'White and Blue w/ 10 Ball',
-        image: data[0].node.productMorePhotos[5],
-        rating: data[0].node.rating,
-        price: 32.99,
-        excerpt: data[0].node.description.childMarkdownRemark.excerpt,
-        slug: data[0].node.slug
-      },
-    ];
-    
-    return (
-      <React.Fragment>
-        <div className="row product-main">
-          {reformattedData.map(({id, name, image, rating, price, excerpt, slug}) => {
-            return (
-            <Link key={id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4" to={`${slug}`}>
-            <div>
-              <div className="details_List">
-                {image === null ? <div className="no-image">No Image</div> : <Img fluid={image.fluid} />}
-                <div className="details_inner">
-                <h2>{name}</h2>
-                  <StarRatingComponent
-                    name="rate1"
-                    starCount={5}
-                    value={rating}
-                  />
-                  <p>{excerpt.substr(0, 50)}...</p>
-                  <div className="row">
-                    <div className="col-sm-7 align-self-center">
-                      <small>${price}</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </Link>
-        )})}
-        </div>
-       <Link className="text-dark mb-5" to={`/${linkData}`}>See More <i className="fa fa-arrow-right"></i></Link>
-      </React.Fragment>
-    );
-}
 
 const IndexPage = data => {
   const mens = productFilter(data.data.allContentfulClothing.edges, 'Mens');
   const ladies = productFilter(data.data.allContentfulClothing.edges, 'Ladies');
-  const whips = productFilter(data.data.allContentfulAccessory.edges, 'Get Back Whips');
 
   return (
     <>
@@ -142,18 +77,7 @@ const IndexPage = data => {
       }
 
       <div style={{margin: '7rem 0'}} />
-      {
-        whips.length > 0 &&
-        <div className="container mt-5 mb-5">
-          <div>
-            <Link className="text-dark" to="/get-back-whips">
-              <h3 className="text-center text-md-left">"Get Back" Whips</h3>
-            </Link>
-          </div>
-          <AccessoryPost linkData="get-back-whips" data={whips}></AccessoryPost>
-        </div>
-      }
-      <div style={{margin: '7rem 0'}} />
+    
       {
         ladies.length > 0 &&
         <div className="container mt-5 mb-5">
@@ -211,49 +135,6 @@ export const query = graphql`
             }
           }
           sizesAndPrices
-          description {
-            childMarkdownRemark {
-              excerpt(pruneLength: 140)
-            }
-          }
-        }
-      }
-    }
-    allContentfulAccessory(sort:{fields:createdAt, order: DESC}){
-      edges{
-        node{
-          id
-          name
-          slug
-          rating
-          price
-          discount
-          category {
-            name
-          }
-          image {
-            fluid(maxWidth: 1000) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
-          productMorePhotos {
-            fluid(maxWidth: 1000) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
-          variations
           description {
             childMarkdownRemark {
               excerpt(pruneLength: 140)

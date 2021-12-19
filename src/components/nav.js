@@ -65,8 +65,6 @@ const ResponsiveNav = () => {
     }
   }
   
-
-
   return (
     <div className="nav-wrapper">
       <Link to="/" onClick={() => setNavVisibility(false)}>

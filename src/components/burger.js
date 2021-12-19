@@ -9,18 +9,21 @@ const Burger = ({ navOpen, setNavOpen }) => {
             >
             <div 
                 style={{
-                    transform: navOpen ? 'rotate(45deg)' : 'rotate(0)'
+                    margin: navOpen ? 0 : '.35rem',
+                    transform: navOpen ? 'rotate(45deg)' : 'rotate(0)',
                 }} 
             />
             <div 
                 style={{
+                    margin: navOpen ? 0 : '.35rem',
                     transform: navOpen ? 'translateX(20px)' : 'translateX(0)',
                     opacity: navOpen ? 0 : 1
                 }} 
             />
             <div 
                 style={{
-                    transform: navOpen ? 'rotate(-45deg)' : 'rotate(0)'
+                    margin: navOpen ? 0 : '.35rem',
+                    transform: navOpen ? 'rotate(-45deg)' : 'rotate(0)',
                 }} 
                 />
         </button>

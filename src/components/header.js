@@ -1,19 +1,51 @@
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import ResponsiveNav from './nav';
+import logo from '../images/banner-logo.svg';
+import Burger from './burger';
+import NavDrawer from './navDrawer';
 
 
+const Header = ({ navOpen, setNavOpen, isSmallScreen, location, isSmallerScreen }) => {
+  return (
+    <>
+    <header className="site-header">
+      <section>
+        <Link className="header-logo" to="/"><img src={logo} alt="logo"></img></Link>
+      </section>
+        {
+          isSmallScreen ?
+          <Burger 
+            navOpen={navOpen} 
+            setNavOpen={setNavOpen} 
+            isSmallScreen={isSmallScreen} 
+          />
+          :
+            <nav>
+                  <Link to="/store">Store</Link>
+                  <Link to="/about-us">About Us</Link>
+                  <Link to="/contact-us">Contact Us</Link>
+            </nav>
+        }
 
-const Header = () => (
-    <ResponsiveNav />
-)
+    </header>
+    <NavDrawer
+      location={location} 
+      navOpen={navOpen}
+      setNavOpen={setNavOpen} 
+      isSmallScreen={isSmallScreen}
+      isSmallerScreen={isSmallerScreen}
+    />
+    </>
+  );
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

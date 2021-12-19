@@ -107,6 +107,7 @@ const Layout = ({
             setShowItemsCount={setShowItemsCount}
             navOpen={navOpen}
             setNavOpen={setNavOpen}
+            itemsCount={itemsCount}
           />
           <div className="main-container">
             <main>{children}</main>

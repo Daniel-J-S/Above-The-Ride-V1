@@ -4,7 +4,7 @@ import React from 'react';
 const Burger = ({ navOpen, setNavOpen }) => {
     return (
         <button 
-            className="burger ml-auto mr-3" 
+            className="burger" 
             onClick={() => setNavOpen(!navOpen)}
             >
             <div 

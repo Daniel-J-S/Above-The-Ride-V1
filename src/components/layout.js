@@ -22,8 +22,12 @@ const Layout = ({
     const [isSmallScreen, setIsSmallScreen] = useState(true);
     const [showItemsCount, setShowItemsCount] = useState(false);
     const [navOpen, setNavOpen] = useState(false);
+    const [isPastTop, setPastTop] = useState(false);
 
     const itemsCount = useRef();
+    const handleWheelCallback = useRef();
+    const handleScrollCallback = useRef();
+  
 
     const handleMutations = function (mutations) {
       mutations.forEach(function (mutation) {
@@ -52,6 +56,20 @@ const Layout = ({
         setIsSmallerScreen(false);
       }
     };
+
+    const handleWheel = (e) => {
+      if(e.deltaY >= 10) {
+        setNavOpen(false);
+      }
+    }
+    const handleScroll = () => {
+      if(window.scrollY > 10) {
+        setNavOpen(false);
+        setPastTop(true);
+      } else {
+        setPastTop(false);
+      }
+    }
 
 
     const handleMediaQueryChange = mediaQuery => {
@@ -82,6 +100,26 @@ const Layout = ({
       };
     }, []);
 
+    useEffect(() => {
+      handleWheelCallback.current = handleWheel
+      handleScrollCallback.current = handleScroll
+    })
+  
+  
+    useEffect(() => {
+      window.addEventListener('wheel', handleWheelCallback.current);
+      return () => {
+        window.removeEventListener('wheel', handleWheelCallback.current);
+      }
+    }, []);
+  
+    useEffect(() => {
+      window.addEventListener('scroll', handleScrollCallback.current);
+      return () => {
+        window.removeEventListener('scroll', handleScrollCallback.current);
+      }
+    }, []);
+
   return (
     <StaticQuery
       query={graphql`
@@ -108,6 +146,7 @@ const Layout = ({
             navOpen={navOpen}
             setNavOpen={setNavOpen}
             itemsCount={itemsCount}
+            isPastTop={isPastTop}
           />
           <div className="main-container">
             <main>{children}</main>

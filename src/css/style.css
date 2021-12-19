@@ -189,7 +189,7 @@ pre tt:after{content:""}
 }
 
 /* header css */
-header.site-header{width:100%;background:#000000;z-index:9;padding: .5rem 0; max-height: 8rem; position: fixed;}
+/* header.site-header{width:100%;background:#000000;z-index:9;padding: .5rem 0; max-height: 8rem; position: fixed;} */
 ul.navbar-nav.mr-auto li{margin-bottom:0;}
 main{margin:0;}
 .header-cart{width:80px; grid-area: "cart"; align-self: center;}
@@ -347,11 +347,6 @@ a.header-logo img{margin:0;width:100px;}
 footer.site-footer ul{margin:0;}
 .snipcart-modal__container {
   padding-top: 5rem !important;
-}
-
-
-.main-container {
-  padding-top: 5rem;
 }
 
 
@@ -622,7 +617,7 @@ p {
     display: flex;
     justify-content: center;
   }
-  header.site-header .align-self-center{align-self:center!important;text-align:left;}
+  /* header.site-header .align-self-center{align-self:center!important;text-align:left;} */
   a.header-logo img {width:60px;}
   header nav ul.navbar-nav{justify-content:space-around;}
   ul.latest-blog li{width:100%!important;margin-bottom:15px;display:block!important;}
@@ -630,7 +625,7 @@ p {
   header nav{display:inline-block;width:100%;}
   ul.navbar-nav.mr-auto li{display:inline-block;margin:0 5px 0 0;}
   .navbar-nav .nav-link{font-size:14px;}
-  header.site-header{padding:15px 0;}
+  header.site-header {padding:15px 0;}
   a.header-logo{margin-bottom:5px;display:block;}
   .site-footer .footer_inner{padding:20px 0;}
   .site-footer .menu-main-container ul li a{font-size:14px;padding:0 6px;}
@@ -715,10 +710,13 @@ p {
 }
 
 .site-header {
+  background-color: transparent;
+  z-index: 9;
   position: fixed;
   width: 100%;
   display: flex;
   align-items: center;
+  animation: fadeIn 1s linear forwards;
 }
 
 .site-header section {
@@ -730,7 +728,7 @@ p {
 
 .site-header a {
   font-family: 'Bernier', cursive !important;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #fff;
   margin: 0 .5rem;
 }

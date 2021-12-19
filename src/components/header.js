@@ -1,12 +1,17 @@
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 import logo from '../images/banner-logo.svg';
 import Burger from './burger';
 import NavDrawer from './navDrawer';
 
 
-const Header = ({ navOpen, setNavOpen, isSmallScreen, location, isSmallerScreen }) => {
+const Header = ({
+    navOpen,
+    setNavOpen,
+    isSmallScreen,
+    location,
+    isSmallerScreen
+  }) => {
   return (
     <>
     <header className="site-header">
@@ -21,11 +26,11 @@ const Header = ({ navOpen, setNavOpen, isSmallScreen, location, isSmallerScreen 
             isSmallScreen={isSmallScreen} 
           />
           :
-            <nav>
-                  <Link to="/store">Store</Link>
-                  <Link to="/about-us">About Us</Link>
-                  <Link to="/contact-us">Contact Us</Link>
-            </nav>
+          <nav>
+            <Link to="/store">Store</Link>
+            <Link to="/about-us">About Us</Link>
+            <Link to="/contact-us">Contact Us</Link>
+          </nav>
         }
 
     </header>
@@ -39,13 +44,5 @@ const Header = ({ navOpen, setNavOpen, isSmallScreen, location, isSmallerScreen 
     </>
   );
 }
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
-};
 
 export default Header;

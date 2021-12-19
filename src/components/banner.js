@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
@@ -6,9 +6,6 @@ import { Link } from 'gatsby';
 
 
 export default function Banner ({ BannerData }) {
-    const [ message, setMessage ] = useState(0);
-
-    const messageRef = useRef();
     
     const settings = {
       dots: false,

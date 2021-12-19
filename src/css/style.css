@@ -1,7 +1,18 @@
 @font-face {
+  font-family: 'Bernier';
+  src: url('./webfonts/BERNIERRegular-Regular.ttf') format('ttf'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   url('./webfonts/BERNIERRegular-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+} 
+@font-face {
   font-family: 'Arbutus';
   src: url('./webfonts/Arbutus-Regular.ttf') format('ttf'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
    url('./webfonts/Arbutus-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+} 
+
+@font-face {
+  font-family: 'Vintage';
+  src: url('./webfonts/Vintage-Style.ttf') format('ttf'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   url('./webfonts/Vintage-Style.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 } 
 
 @font-face {
@@ -718,6 +729,12 @@ p {
 }
 
 .site-header a {
+  font-family: 'Bernier', cursive !important;
+  font-size: 2rem;
   color: #fff;
   margin: 0 .5rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Bernier', cursive !important;
 }

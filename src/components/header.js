@@ -27,8 +27,8 @@ const Header = ({
           />
           :
           <nav>
-            <Link to="/about-us">About Us</Link>
-            <Link to="/contact-us">Contact Us</Link>
+            <Link to="/about-us">About</Link>
+            <Link to="/contact-us">Contact</Link>
           </nav>
       }
       </section>

@@ -6,7 +6,7 @@ import logo from '../images/banner-logo.svg';
 
 
 
-const ResponsiveNav = () => {
+const ResponsiveNav = ({}) => {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(true);
   const [showItemsCount, setShowItemsCount] = useState(false)

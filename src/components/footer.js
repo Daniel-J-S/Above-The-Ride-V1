@@ -35,23 +35,11 @@ class Footer extends Component {
                                         </a>
                                     </li>
                                 </ul>
-                                <address className="mt-3">
-                                    <a href="https://g.page/wilson-biker-gear?share" target="_blank" rel="noopener noreferrer">
-                                    3016 Alta Mere Dr<br />
-                                    Fort Worth, TX 76116<br />
-                                    </a>
-                                    <a href="tel:8173860631">(817) 386-0631</a>
-                                </address>
-                                <p className="mt-5 mb-3"><strong>Hours of Operation</strong></p>
-                                <ul>
-                                    <li>Weds - Sun: 9 AM - 5 PM</li>
-                                    <li>Mon - Tues: CLOSED</li>
-                                </ul>
                             </div>
                         </div>
                         <div className="footer-bottom social-right-menu mt-5">
                             <div className="site-info">
-                               <small>©{new Date().getFullYear()} Wilson Biker Gear. All rights reserved.</small>
+                               <small>©{new Date().getFullYear()} Above the Ride. All rights reserved.</small>
                             </div>
                             <div className="site-info">
                                <small>Custom Built By <a href="https://danieljs.io" target="_blank" rel="noopener noreferrer">DanielJS</a></small>

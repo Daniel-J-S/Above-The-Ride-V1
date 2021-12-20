@@ -62,7 +62,6 @@ export default function Banner ({ BannerData }) {
                 <Img fluid={items.node.image.fluid} />
                 <div className="Banner-details">
                   <div>
-                    <span className="sub-title">{items.node.subHeading}</span>
                     <h1>{items.node.title}</h1>
                     <Link to="/store">Shop Now</Link>
                   </div>

@@ -716,7 +716,7 @@ p {
   width: 100%;
   display: flex;
   align-items: center;
-  animation: fadeIn 1s linear forwards;
+  animation: fadeIn 250ms linear forwards;
 }
 
 .site-header section {

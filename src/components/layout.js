@@ -82,7 +82,7 @@ const Layout = ({
 
 
     useEffect(() => {
-      const mediaQuery = window.matchMedia("(max-width: 764px)");
+      const mediaQuery = window.matchMedia("(max-width: 768px)");
       mediaQuery.addEventListener('change', handleMediaQueryChangeSmaller);
       handleMediaQueryChangeSmaller(mediaQuery);
       return () => {

@@ -1,11 +1,24 @@
 import React from 'react';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 
 const Burger = ({ navOpen, setNavOpen, isPastTop }) => {
+    
+    const handleClick = () => {
+        scrollTo('#___gatsby')
+        if(isPastTop) {
+           setTimeout(() => {
+               setNavOpen(!navOpen);
+           }, 1200)
+       } else {
+           setNavOpen(!navOpen);
+       }
+    }
+
     return (
         <button 
             className="burger" 
-            onClick={() => setNavOpen(!navOpen)}
+            onClick={handleClick}
             >
             <div 
                 style={{

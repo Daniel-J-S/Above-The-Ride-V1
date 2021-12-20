@@ -20,7 +20,7 @@ const Header = ({
     <header
       key={isPastTop} 
       className="site-header" 
-      style={{ backgroundColor: isPastTop ? '#f7f4f4': 'transparent', borderBottom: isPastTop ? '1px solid black': 'none'}}
+      style={{ backgroundColor: isPastTop ? '#f7f4f4': navOpen ? '#000000' : 'transparent', borderBottom: isPastTop ? '1px solid black': 'none'}}
       >
       <section style={{ justifyContent: isSmallScreen ? 'flex-start': 'center'}}>
       {

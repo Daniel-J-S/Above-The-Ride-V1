@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 
 const navitemStyles = {
-    'fontSize': '1.3rem',
+    'fontSize': '1.7rem',
     'textTransform': 'uppercase',
     'padding': '1.5rem',
     'fontWeight': 'bold',

@@ -11,7 +11,8 @@ const navitemStyles = {
     'textDecoration': 'none',
     'transition': 'color 0.80s linear',
     'color': '#ffffff',
-    'cursor': 'pointer'
+    'cursor': 'pointer',
+    'font-family': 'Bernier, Helvetica, cursive'
 };
 
 const navDrawerStyles = {

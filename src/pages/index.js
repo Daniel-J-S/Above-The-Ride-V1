@@ -56,14 +56,11 @@ const IndexPage = data => {
     <>
       <SEO 
         title="Home" 
-        keywords={[`biker gear`, `vests`, `sewing`, `jackets`]}
-        description="40 years experience in leather goods, sewing and passing on the best prices to customers. Looking for Biker Gear, accessories or just need your patches sewn on? We specialize in exceptional quality and precision to ensure they are done right the first time."
+        keywords={[`Motorcycle Rider Apparel`, `t-shirts`, `hoodies`, `hats`, `accessories`]}
+        description="We bring life back to the motorcycle rider's lifestyle. Freshen up your look with one of our t-shirts"
         location={data.location}
       />
-      <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
-      <div className="container">
-        <div className="text-center"><h2 className="main-title with-underline">Best Sellers</h2></div>
-      </div>
+      <Banner bannerData={data.data.contentfulHeaderBanner} />
       {
         mens.length > 0 &&
         <div className="container mt-5 mb-5">
@@ -98,6 +95,23 @@ export default IndexPage;
 
 export const query = graphql`
   query AboutQuery {
+    contentfulHeaderBanner(page: {eq: "home"}) {
+      title
+      subHeading
+      buttonLink
+      images {
+        fluid(maxWidth: 1800) {
+          tracedSVG
+          srcWebp
+          srcSetWebp
+          srcSet
+          src
+          sizes
+          base64
+          aspectRatio
+        }
+      }
+    }
     allContentfulClothing(sort:{fields:createdAt, order: DESC}){
       edges{
         node{
@@ -135,25 +149,6 @@ export const query = graphql`
           description {
             childMarkdownRemark {
               excerpt(pruneLength: 140)
-            }
-          }
-        }
-      }
-    }
-    allContentfulHeaderBanner {
-      edges {
-        node {
-          title
-          subHeading
-          image {
-            fluid(maxWidth: 1800) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
             }
           }
         }

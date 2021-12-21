@@ -5,16 +5,15 @@ import { Link } from 'gatsby';
 
 
 
-export default function Banner ({ BannerData }) {
-    
+export default function Banner ({ bannerData }) {
     const settings = {
       dots: false,
       speed: 3500,
-      infinite: false,
-      autoplay: false,
+      infinite: bannerData.images.length > 1,
+      autoplay: bannerData.images.length > 1,
       autoplaySpeed: 5000,
-      slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToShow: bannerData.images.length,
+      slidesToScroll: bannerData.images.length
     };
 
     /*
@@ -56,19 +55,19 @@ export default function Banner ({ BannerData }) {
     return (
       <div className="slider-section">
         <Slider {...settings}>
-          {BannerData.map((items, i) => (
-            <div key={i} className="item">
+            <div className="item">
               <div className="site-Banner">
-                <Img fluid={items.node.image.fluid} />
+                {bannerData.images.map((image, i) => (
+                  <Img key={i} fluid={image.fluid} />
+                ))}
                 <div className="Banner-details">
                   <div>
-                    <h1>{items.node.title}</h1>
-                    <Link to="/store">Shop Now</Link>
+                    <h1>{bannerData.title}</h1>
+                    <Link to="/store">{bannerData.buttonLink}</Link>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
         </Slider>
       </div>
   );

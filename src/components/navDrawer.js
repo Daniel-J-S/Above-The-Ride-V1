@@ -12,7 +12,7 @@ const navitemStyles = {
     'transition': 'color 0.80s linear',
     'color': '#ffffff',
     'cursor': 'pointer',
-    'font-family': 'Bernier, Helvetica, cursive'
+    'fontFamily': 'Bernier, Helvetica, cursive'
 };
 
 const navDrawerStyles = {

@@ -257,13 +257,13 @@ span.price{font-family: 'Roboto', sans-serif !important; font-weight:bold;font-s
 .slick-dots li.slick-active button{background:dodgerblue;}
 .slick-list{overflow:hidden;margin-bottom:30px;}
 .site-Banner{width:100%;position:relative;}
-.site-Banner .Banner-details{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);width:1110px!important;max-width:90%;z-index:1;}
-.site-Banner .Banner-details h1{color:#fff;font-size:60px;text-shadow:6px 6px 7px #000;}
+.site-Banner .Banner-details{ position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);width:1110px!important;max-width:90%;z-index:1;}
+.site-Banner .Banner-details h1{color:#fff;font-size:60px;text-shadow:6px 6px 7px #000; margin: 3rem 0 1.2rem;}
 .slick-slider .slick-list div img{width:100%;}
 .slick-slider .slick-list div img{width:100%;margin:0;}
 .slick-slider .slick-list .site-Banner:before{content:"";background:#0000004a;position:absolute;top:0;left:0;bottom:0;right:0;width:100%;z-index:1;height:calc(100% - 10px);}
 .site-Banner .Banner-details .sub-title{color:#fff;text-shadow:2px 2px 3px #000;font-size:28px;}
-.site-Banner .Banner-details a{background: dodgerblue;color:#fff;text-decoration:none;padding:12px 25px;border-radius:3px;display:inline-block;letter-spacing:1px;}
+.site-Banner .Banner-details a{font-family: 'Bernier', Helvetica; background: dodgerblue;color:#fff;text-decoration:none;padding:12px 25px;border-radius:3px;display:inline-block;letter-spacing:3px;}
 .site-Banner .Banner-details >div{max-width:70%;}
 .store-page .product-main{margin-top:30px; min-height: 75vh;}
 .details-page .product-details{margin-top:30px;}

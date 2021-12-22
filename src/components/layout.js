@@ -119,6 +119,7 @@ const Layout = ({
         window.removeEventListener('scroll', handleScrollCallback.current);
       }
     }, []);
+  
 
   return (
     <StaticQuery
@@ -148,8 +149,17 @@ const Layout = ({
             itemsCount={itemsCount}
             isPastTop={isPastTop}
           />
-          <div className="main-container">
-            <main>{children}</main>
+          <div className="main-container" style={{
+              opacity: navOpen ? '.2' : '1',
+              minHeight: '100vh',
+              backgroundColor: 'white',
+              zIndex: 9999,
+              width: '100vw',
+              animation: navOpen ? 'fadeOut 500ms ease-out backwards':'none'
+            }}>
+            <main>
+              {children}
+            </main>
           </div>
           <Footer />
         </>

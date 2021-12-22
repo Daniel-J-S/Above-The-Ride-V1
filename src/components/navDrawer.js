@@ -54,7 +54,14 @@ const NavDrawer = ({ navOpen, setNavOpen, isSmallScreen, isSmallerScreen }) => {
             ...navDrawerStyles
         }}>
         {links.map((link, idx) => (
-            <Link style={navitemStyles} key={idx} to={link.slug}>{link.text}</Link>
+            <Link 
+                key={idx} 
+                onClick={() => setNavOpen(!navOpen)} 
+                style={navitemStyles} 
+                to={link.slug}
+            >
+                {link.text}
+            </Link>
         ))}
         </nav>
     );

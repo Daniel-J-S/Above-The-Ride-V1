@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 
 
 
-export default function Banner ({ bannerData }) {
+export default function Banner ({ bannerData, isIndex }) {
     const settings = {
       dots: false,
       speed: 3500,
@@ -63,7 +63,10 @@ export default function Banner ({ bannerData }) {
                 <div className="Banner-details">
                   <div>
                     <h1>{bannerData.title}</h1>
-                    <Link to="/store">{bannerData.buttonLink}</Link>
+                    {
+                      isIndex &&
+                      <Link to="/store">{bannerData.buttonLink}</Link>
+                    }
                   </div>
                 </div>
               </div>

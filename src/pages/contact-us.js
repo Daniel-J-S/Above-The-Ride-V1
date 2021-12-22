@@ -1,9 +1,10 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link, graphql } from 'gatsby';
 import Form from '../components/form';
+import Banner from '../components/banner';
 import SEO from '../components/seo';
 
-function Contact ({ location }) {
+function Contact ({ location, data }) {
     function getItemDetails() {
         if(location.state && location.state.itemName && location.state.itemPrice) {
             const {itemName, itemPrice, itemSize} = location.state
@@ -21,6 +22,7 @@ function Contact ({ location }) {
                 description="Please contact us for any questions regarding our current inventory or if you just want to say hello"
                 location={location}
             />
+            <Banner isIndex={false} bannerData={data.contentfulHeaderBanner} />
             <div className="Contact-us">
                 <div className="container">
                     <h1 className="mb-5">Contact Us</h1>
@@ -31,6 +33,28 @@ function Contact ({ location }) {
         </>
     )
 }
+
+export const query = graphql`
+    query {
+        contentfulHeaderBanner(page: {eq: "contact us"}) {
+            title
+            subHeading
+            buttonLink
+            images {
+                fluid(maxWidth: 1800) {
+                    tracedSVG
+                    srcWebp
+                    srcSetWebp
+                    srcSet
+                    src
+                    sizes
+                    base64
+                    aspectRatio
+                }
+            }
+        }
+    }
+`;
 
 
 export default Contact;

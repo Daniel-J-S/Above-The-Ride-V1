@@ -1567,10 +1567,15 @@ a.header-logo img {
   padding: 2.5rem 5rem;
   max-width: 55rem;
   margin: auto;
+  font-family: 'Bernier', 'Helvetica' !important;
+}
+
+strong {
+  font-family: 'Bernier', 'Helvetica' !important;
 }
 
 .store-Policies h2 {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Bernier', 'Helvetica' !important;
 }
 
 .details-page {

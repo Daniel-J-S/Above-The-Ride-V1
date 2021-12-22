@@ -1,10 +1,12 @@
 import React from 'react';
 import SEO from '../components/seo';
 import { graphql } from 'gatsby';
+import Banner from '../components/banner';
 
 function StorePolicy({
         data: {
-            terms
+            terms,
+            contentfulHeaderBanner
         },
         location
     }) {
@@ -16,6 +18,7 @@ function StorePolicy({
                 description="40 years experience in leather goods, sewing and passing on the best prices to customers. Looking for Biker Gear, accessories or just need your patches sewn on? We specialize in exceptional quality and precision to ensure they are done right the first time."
                 location={location}
             />
+            <Banner isIndex={false} bannerData={contentfulHeaderBanner} />
             <div className="store-Policies">
                 <div className="container">
                     <div className="row">
@@ -45,6 +48,23 @@ query StorePolicyQuery {
         }
       }
       name
+    }
+    contentfulHeaderBanner(page: {eq: "terms"}) {
+        title
+        subHeading
+        buttonLink
+        images {
+            fluid(maxWidth: 1800) {
+                tracedSVG
+                srcWebp
+                srcSetWebp
+                srcSet
+                src
+                sizes
+                base64
+                aspectRatio
+            }
+        }
     }
 }`;
 

@@ -862,24 +862,17 @@ header nav ul.navbar-nav li a {
   color: #fff;
 }
 
-/* header css */
+.site-footer *:not(.fab) {
+  color: #fff;
+  font-family: 'Bernier', 'Helvetica';
+}
+
 footer.site-footer {
-  background: #000000;
+  background: #000;
   padding: 0;
   text-align: center;
 }
 
-footer.site-footer * {
-  color: #fff;
-}
-
-footer small>a {
-  font-family: Roboto;
-}
-
-footer small>a:hover {
-  text-decoration: underline;
-}
 
 .social-links {
   display: flex;

@@ -60,7 +60,7 @@ const IndexPage = data => {
         description="We bring life back to the motorcycle rider's lifestyle. Freshen up your look with one of our t-shirts"
         location={data.location}
       />
-      <Banner bannerData={data.data.contentfulHeaderBanner} />
+      <Banner isIndex={true} bannerData={data.data.contentfulHeaderBanner} />
       {
         mens.length > 0 &&
         <div className="container mt-5 mb-5">

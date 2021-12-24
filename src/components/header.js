@@ -24,7 +24,7 @@ const Header = ({
         backgroundColor: isPastTop ? '#f7f4f4': 
         navOpen ? '#000000' : 'transparent', 
         borderBottom: isPastTop ? '1px solid #808080': 'none',
-        boxShadow: isPastTop ? '1px 1px 3px 2px #808080': 'none',
+        boxShadow: isPastTop ? '1px 1px 10px 1px #333': 'none',
       }}
       >
       <section style={{ justifyContent: isSmallScreen ? 'flex-start': 'center'}}>

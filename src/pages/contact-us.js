@@ -25,7 +25,6 @@ function Contact ({ location, data }) {
             <Banner isIndex={false} bannerData={data.contentfulHeaderBanner} />
             <div className="Contact-us">
                 <div className="container">
-                    <h1 className="mb-5">Contact Us</h1>
                     <p className="mb-5 mt-5"><small>Question about returning an item? See our <Link to="/terms-of-service">Terms of Service</Link> page before contacting us</small></p>
                     <Form message={getItemDetails()} />
                 </div>

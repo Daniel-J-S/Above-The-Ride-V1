@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import SEO from '../components/seo';
+import Banner from '../components/banner';
 import StarRatingComponent from 'react-star-rating-component';
 import { graphql } from 'gatsby';
 import { processSizeAndPrice } from '../utils/process-size-and-price';
@@ -32,13 +33,13 @@ class IndexPost extends React.Component {
 
   render() {
 
-    const { data } = this.props;
+    const { clothing } = this.props;
     const { NoOfPost } = this.state;
 
     return (
       <React.Fragment>
       <div className="row product-main">
-        {data.data.allContentfulClothing.edges.slice(0, NoOfPost).map(items => {
+        {clothing.edges.slice(0, NoOfPost).map(items => {
           const {5: minPrice, 4: maxPrice }  = processSizeAndPrice(items.node.sizesAndPrices);
           return (
           <Link key={items.node.id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4" to={`/${items.node.slug}`}>
@@ -73,29 +74,31 @@ class IndexPost extends React.Component {
   }
 }
 
-const IndexPage = data => (
-
+const IndexPage = ({ location, data: { clothing, bannerData }}) => { 
+  return (
   <>
     <SEO 
       title="Store" 
       keywords={[`current inventory`, `jackets`, `vests`, `sewing`]} 
-      description="Check out our current inventory for mens and womens jackets and vests"
-      location={data.location}
+      description="Check out our current inventory of t-shirts and hoodies"
+      location={location}
     />
+    <Banner isIndex={false} bannerData={bannerData} /> *
     <div className="container store-page mb-5">
-      <div className="text-center mt-5">
+      <div className="text-left mt-5">
           <h1 className="with-underline">All Apparel</h1>
       </div>
-      <IndexPost data={data}></IndexPost>
-    </div>
+      <IndexPost clothing={clothing}></IndexPost>
+    </div> 
   </>
-);
+  );
+}
 
 export default IndexPage;
 
 export const query = graphql`
   query StoreQuery {
-    allContentfulClothing {
+    clothing: allContentfulClothing {
       edges{
         node{
           id
@@ -120,5 +123,22 @@ export const query = graphql`
       }
     }
   }
+  bannerData: contentfulHeaderBanner(page: {eq: "store"}) {
+    title
+    subHeading
+    buttonLink
+    images {
+        fluid(maxWidth: 1800) {
+            tracedSVG
+            srcWebp
+            srcSetWebp
+            srcSet
+            src
+            sizes
+            base64
+            aspectRatio
+        }
+    }
+}
 }`;
 

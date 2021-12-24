@@ -1,10 +1,12 @@
 import React from 'react';
 import SEO from '../components/seo';
+import Banner from '../components/banner';
 import { graphql } from 'gatsby';
 
 function About({
         data: {
-            aboutUs
+            aboutUs,
+            bannerData
         },
         location
     }) {
@@ -12,16 +14,16 @@ function About({
             <>
             <SEO 
                 title="About" 
-                keywords={[`about us`, `our story`, `leather goods`, `biker gear`, `vests`]} 
-                description="40 years experience in leather goods, sewing and passing on the best prices to customers. Looking for Biker Gear, accessories or just need your patches sewn on? We specialize in exceptional quality and precision to ensure they are done right the first time."
+                keywords={[`about us`, `our story`, `motorcyclist apparel`, `t-shirts`, `hoodies`]} 
+                description="We bring life back to the motorcyclist lifestyle"
                 location={location}
             />
+            <Banner isIndex={false} bannerData={bannerData} />
             <div className="site-About">
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12">
                             <div className="container">
-                                <h1 className="text-center mt-5 mb-5">{aboutUs.name}</h1>
                                 <div
                                     dangerouslySetInnerHTML={{
                                     __html: aboutUs.body.childMarkdownRemark.html
@@ -45,6 +47,23 @@ query AboutPageQuery {
         }
       }
       name
+    }
+    bannerData: contentfulHeaderBanner(page: {eq: "about us"}) {
+        title
+        subHeading
+        buttonLink
+        images {
+            fluid(maxWidth: 1800) {
+                tracedSVG
+                srcWebp
+                srcSetWebp
+                srcSet
+                src
+                sizes
+                base64
+                aspectRatio
+            }
+        }
     }
 }`;
 

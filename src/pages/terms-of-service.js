@@ -24,7 +24,6 @@ function StorePolicy({
                     <div className="row">
                         <div className="col-sm-12">
                             <div className="container">
-                                <h1 className="text-center mt-5 mb-5">{terms.name}</h1>
                                 <div
                                     dangerouslySetInnerHTML={{
                                     __html: terms.body.childMarkdownRemark.html

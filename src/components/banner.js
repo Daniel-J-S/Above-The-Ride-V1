@@ -60,9 +60,9 @@ export default function Banner ({ bannerData, isIndex }) {
                 {bannerData.images.map((image, i) => (
                   <Img key={i} fluid={image.fluid} />
                 ))}
-                <div className="Banner-details">
+                <div style={{textAlign: !isIndex && 'center'}} className="Banner-details">
                   <div>
-                    <h1>{bannerData.title}</h1>
+                    <h1 style={{textAlign: !isIndex && 'center'}}>{bannerData.title}</h1>
                     {
                       isIndex &&
                       <Link to="/store">{bannerData.buttonLink}</Link>
